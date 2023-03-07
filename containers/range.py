@@ -19,7 +19,7 @@ def range(a, b=None, c=None):
     function normally using the yield syntax.
 
     NOTE:
-    For efficiency reasons, Python's built-in range
+    For efficiency, Python's built-in range
     object is written in the C programming
     language rather than natively in python.
     You can find the source code online at
