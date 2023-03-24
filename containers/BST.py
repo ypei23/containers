@@ -38,7 +38,7 @@ class BST(BinaryTree):
         and that they won't have to reimplement it.
         '''
         return type(self).__name__ + '(' + str(self.to_list('inorder')) + ')'
-    
+
     def __iter__(self):
         if self:
             return self.root.__iter__()
@@ -242,7 +242,7 @@ class BST(BinaryTree):
             node.left = BST._remove(node.left, value)
             return node
         elif value > node.value:
-            node.right =  BST._remove(node.right, value)
+            node.right = BST._remove(node.right, value)
             return node
 
     def remove_list(self, xs):
@@ -256,4 +256,4 @@ class BST(BinaryTree):
         See the insert_list function.
         '''
         for x in xs:
-           self.remove(x)
+            self.remove(x)
