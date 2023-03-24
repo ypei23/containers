@@ -96,7 +96,9 @@ class BST(BinaryTree):
             return BST._insert(self.root, value)
         else:
             self.root = Node(value)
-
+    
+    # Disable N805 check for this method
+    # pylint: disable=missing-function-docstring, no-self-use, N805
     def _insert(node, value):
         if node.value > value:
             if node.left:
@@ -198,7 +200,8 @@ class BST(BinaryTree):
             return None
         else:
             return BST._find_largest(self.root)
-
+    # Disable N805 check for this method
+    # pylint: disable=missing-function-docstring, no-self-use, N805
     def _find_largest(node):
         assert node is not None
         if node.right is None:
@@ -224,7 +227,9 @@ class BST(BinaryTree):
             return
         else:
             self.root = BST._remove(self.root, value)
-
+    
+    # Disable N805 check for this method
+    # # pylint: disable=missing-function-docstring, no-self-use, N805
     def _remove(node, value):
         if node is None:
             return node
