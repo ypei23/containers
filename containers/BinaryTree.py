@@ -130,7 +130,6 @@ class BinaryTree():
         FIXME:
         Implement this function by modifying the _print functions above.
         '''
-        traversal = []
         if traversal_type == 'preorder':
             return self.preorder(self.root, [])
         if traversal_type == 'inorder':
@@ -143,6 +142,7 @@ class BinaryTree():
         FIXME:
         Implement this function by modifying the _print functions above.
         '''
+        traversal = []
         if start:
             traversal.append(start.value)
             traversal = self.preorder(start.left, traversal)
@@ -154,6 +154,7 @@ class BinaryTree():
         FIXME:
         Implement this function by modifying the _print functions above.
         '''
+        traversal = []
         if start:
             traversal = self.inorder(start.left, traversal)
             traversal.append(start.value)
@@ -165,6 +166,7 @@ class BinaryTree():
         FIXME:
         Implement this function by modifying the _print functions above.
         '''
+        traversal = []
         if start:
             traversal = self.postorder(start.left, traversal)
             traversal = self.postorder(start.right, traversal)
