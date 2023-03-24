@@ -107,7 +107,7 @@ class BST(BinaryTree):
         else:
             self.root = Node(value)
 
-    def _insert(node, value):
+    def _insert(self, node, value):
         if node.value > value:
             if node.left:
                 BST._insert(node.left, value)
@@ -209,7 +209,7 @@ class BST(BinaryTree):
         else:
             return BST._find_largest(self.root)
 
-    def _find_largest(node):
+    def _find_largest(self, node):
         assert node is not None
         if node.right is None:
             return node.value
@@ -235,7 +235,7 @@ class BST(BinaryTree):
         else:
             self.root = BST._remove(self.root, value)
 
-    def _remove(node, value):
+    def _remove(self, node, value):
         if node is None:
             return node
         if node.value == value:
