@@ -53,13 +53,7 @@ class BST(BinaryTree):
         HINT:
         Convert the contents of both trees into a sorted list,
         then compare those sorted lists for equality.
-        '''
-    
-    def __iter__(self):
-        if self:
-            return self.root.__iter__()
-        else:
-            return iter([])
+        ''' 
 
     def is_bst_satisfied(self):
         '''
@@ -258,7 +252,7 @@ class BST(BinaryTree):
             node.left = BST._remove(node.left, value)
             return node
         elif value > node.value:
-            node.right =  BST._remove(node.right, value)
+            node.right = BST._remove(node.right, value)
             return node
 
     def remove_list(self, xs):
@@ -272,4 +266,4 @@ class BST(BinaryTree):
         See the insert_list function.
         '''
         for x in xs:
-           self.remove(x)
+            self.remove(x)
