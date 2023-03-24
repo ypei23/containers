@@ -38,7 +38,7 @@ class BST(BinaryTree):
         and that they won't have to reimplement it.
         '''
         return type(self).__name__ + '(' + str(self.to_list('inorder')) + ')'
-
+    
     def __iter__(self):
         if self:
             return self.root.__iter__()
@@ -97,7 +97,7 @@ class BST(BinaryTree):
         else:
             self.root = Node(value)
 
-    def _insert(self, node, value):
+    def _insert(node, value):
         if node.value > value:
             if node.left:
                 BST._insert(node.left, value)
@@ -199,7 +199,7 @@ class BST(BinaryTree):
         else:
             return BST._find_largest(self.root)
 
-    def _find_largest(self, node):
+    def _find_largest(node):
         assert node is not None
         if node.right is None:
             return node.value
@@ -225,7 +225,7 @@ class BST(BinaryTree):
         else:
             self.root = BST._remove(self.root, value)
 
-    def _remove(self, node, value):
+    def _remove(node, value):
         if node is None:
             return node
         if node.value == value:
@@ -242,7 +242,7 @@ class BST(BinaryTree):
             node.left = BST._remove(node.left, value)
             return node
         elif value > node.value:
-            node.right = BST._remove(node.right, value)
+            node.right =  BST._remove(node.right, value)
             return node
 
     def remove_list(self, xs):
@@ -256,4 +256,4 @@ class BST(BinaryTree):
         See the insert_list function.
         '''
         for x in xs:
-            self.remove(x)
+           self.remove(x)
